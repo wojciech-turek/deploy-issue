@@ -7,11 +7,11 @@ const {
 
 async function main() {
   const Marketplace = await ethers.getContractFactory(
-    "NahmiiBundleMarketplace"
+    "FantomBundleMarketplace"
   );
   const marketplaceImpl = await Marketplace.deploy();
   await marketplaceImpl.deployed();
-  console.log("NahmiiBundleMarketplace deployed to:", marketplaceImpl.address);
+  console.log("FantomBundleMarketplace deployed to:", marketplaceImpl.address);
 
   const AdminUpgradeabilityProxyFactory = await ethers.getContractFactory(
     "AdminUpgradeabilityProxy"
@@ -38,7 +38,7 @@ async function main() {
   );
 
   const marketplace = await ethers.getContractAt(
-    "NahmiiBundleMarketplace",
+    "FantomBundleMarketplace",
     marketplaceProxy.address
   );
   await marketplace.initialize(TREASURY_ADDRESS, PLATFORM_FEE);

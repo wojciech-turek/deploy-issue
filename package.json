@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "patch-package --patch-dir node_modules/@thesatoshicompany/optimism-openzeppelin-compat/patches"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "@eth-optimism/hardhat-ovm": "^0.2.3",
     "@eth-optimism/plugins": "^1.0.0-alpha.3",
     "@openzeppelin/contracts-ethereum-package": "^3.0.0",
+    "@thesatoshicompany/optimism-openzeppelin-compat": "^1.0.3",
     "dotenv": "^10.0.0",
     "hardhat": "^2.6.4",
     "hardhat-contract-sizer": "^2.0.3",
